@@ -71,8 +71,11 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show(Request $request)
     {
+        $id = substr(explode(':',serialize($request->query()))[3], 0, 2);
+        $post = Post::find($id);
+
         return view('show', ['post' => $post]);
     }
 
@@ -126,11 +129,23 @@ class PostController extends Controller
         // $request->validate([
         //     'fileToUpload' => 'required|file|max:1024',
         // ]);
+        
+        // $fileName = "file".time().'.'.request()->fileToUpload->getClientOriginalExtension();
  
-        $fileName = "fileName".time().'.'.request()->fileToUpload->getClientOriginalExtension();
+        // $request->fileToUpload->storeAs('video',$fileName);
+
+        $title = $request->title;
+        $fileName = $title.time().'.'.request()->fileToUpload->getClientOriginalExtension();
+        $path = $request->fileToUpload->storeAs('video',$fileName);
+
+        $post = new Post();
+        $post->title = $title;
+        $post->path = url($path);
+        $post->description = $request->description;
+        $post->save();
+
+        
  
-        $request->fileToUpload->storeAs('video',$fileName);
- 
-            return redirect(route('create'));
+            return redirect(route('index'));
     }
 }

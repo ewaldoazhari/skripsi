@@ -7,13 +7,13 @@
 <!-- videoplaayer -->
 						<div class="video-grid">
 							<video class="video-js vjs-default-skin" width="707" height="407" controls data-setup='{}'>
-								<source src="belajar.mp4" type='video/mp4'>
+								<source src="{{ $post->path }}" type='video/mp4'>
 							</video>
 							<!-- <iframe src="https://www.youtube.com/embed/oYiT-vLjhC4" allowfullscreen></iframe> -->
 						</div>
 <!-- title -->
 						<div class="song-info">
-							<h3>Belajar Matematika</h3>
+							<h3>{{$post->title}}{{$post->path}}</h3>
 							<p class="author">By <a href="#" class="author">Dini</a></p>
 							<p class="views">2 views</p>
 							<div class="signin">

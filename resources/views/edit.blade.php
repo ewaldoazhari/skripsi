@@ -1,6 +1,7 @@
 @extends('test')
 
 @section('content')
+<div class="container">
 <h2>update post</h2>
 @if($errors->all())
 <div class="alert alert-danger">
@@ -35,4 +36,5 @@
 		<button type="submit" class="btn btn-outline-info">update post</button>
 	</div>
 </form>
+</div>
 @endsection	

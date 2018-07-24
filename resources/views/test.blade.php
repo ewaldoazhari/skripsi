@@ -21,7 +21,6 @@
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' media="all" />
 <script src="js/jquery-1.11.1.min.js"></script>
-<script src="vue.runtime.min.js"></script>
 <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 <!--start-smoth-scrolling-->

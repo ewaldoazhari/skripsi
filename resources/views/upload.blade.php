@@ -131,6 +131,8 @@
 		                        <form action="/upload" method="post" enctype="multipart/form-data">
 		                            @csrf
 		                            <div class="form-group">
+		                            	Title<input type="text" name="title">
+		                            	Description<input type="text" name="description">
 		                                <input type="file" class="form-control-file" name="fileToUpload" id="exampleInputFile" aria-describedby="fileHelp">
 		                                <small id="fileHelp" class="form-text text-muted">Please upload a valid video file. Size of video should not be more than 200MB.</small>
 		                            </div>
