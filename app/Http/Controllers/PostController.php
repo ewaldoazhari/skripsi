@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
@@ -75,8 +76,9 @@ class PostController extends Controller
     {
         $id = substr(explode(':',serialize($request->query()))[3], 0, 2);
         $post = Post::find($id);
+        $user = User::find($post->user_id);
 
-        return view('show', ['post' => $post]);
+        return view('show', ['post' => $post, 'user' => $user]);
     }
 
     /**
@@ -121,7 +123,8 @@ class PostController extends Controller
 
        public function upload()
     {
-        return view('upload');
+        $user = Auth::user();
+        return view('upload',['user' => $user]);
     }
 
     public function uploadPost(Request $request)
@@ -137,8 +140,9 @@ class PostController extends Controller
         $title = $request->title;
         $fileName = $title.time().'.'.request()->fileToUpload->getClientOriginalExtension();
         $path = $request->fileToUpload->storeAs('video',$fileName);
-
+        $user_id = substr(explode(':',serialize($request->query()))[3], 0, 2);
         $post = new Post();
+        $post->user_id = (int)$user_id;
         $post->title = $title;
         $post->path = url($path);
         $post->description = $request->description;

@@ -128,7 +128,7 @@
 									<input type="text" name="title" id="title" class="form-control">
 								</div>
 							</form> -->
-		                        <form action="/upload" method="post" enctype="multipart/form-data">
+		                        <form action="/upload?{{$user->id}}" method="post" enctype="multipart/form-data">
 		                            @csrf
 		                            <div class="form-group">
 		                            	Title<input type="text" name="title">

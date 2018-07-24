@@ -13,8 +13,8 @@
 						</div>
 <!-- title -->
 						<div class="song-info">
-							<h3>{{$post->title}}{{$post->path}}</h3>
-							<p class="author">By <a href="#" class="author">Dini</a></p>
+							<h3>{{$post->title}}</h3>
+							<p class="author">By <a href="#" class="author">{{$user->name}}</a></p>
 							<p class="views">2 views</p>
 							<div class="signin">
 			                    <a href="{{ route('register') }}">Like</a>
