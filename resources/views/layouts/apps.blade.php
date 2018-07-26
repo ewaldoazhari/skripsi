@@ -34,18 +34,18 @@
         <div id="navbar" class="navbar-collapse collapse">
 			<div class="top-search">
 				<form class="navbar-form navbar-right">
-					<input type="text" class="form-control" placeholder="Search...">
+					<input type="text" class="form-control" placeholder="Cari...">
 					<input type="submit" value=" ">
 				</form>
 			</div>
 			<div class="header-top-right">
 				<div class="signin">
-                    <a href="{{ route('register') }}">Sign Up</a>
+                    <a href="{{ route('register') }}">Daftar</a>
                     
                 </div>	
 				
 				<div class="signin">
-					<a href="{{ route('login') }}">Sign In</a>
+					<a href="{{ route('login') }}">Masuk</a>
 					
 				</div>
 				<div class="clearfix"> </div>

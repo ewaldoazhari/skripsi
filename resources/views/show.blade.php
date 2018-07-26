@@ -14,15 +14,15 @@
 <!-- title -->
 						<div class="song-info">
 							<h3>{{$post->title}}</h3>
-							<p class="author">By <a href="#" class="author">{{$user->name}}</a></p>
-							<p class="views">2 views</p>
+							<p class="author">Oleh <a href="#" class="author">{{$user->name}}</a></p>
+							<p class="views">2 ditonton</p>
 							<div class="signin">
-			                    <a href="{{ route('register') }}">Like</a>
+			                    <a href="{{ route('register') }}">Menyukai</a>
 			                    
 			                </div>	
 							
 							<div class="signin">
-								<a href="{{ route('login') }}">Exercise</a>
+								<a href="{{ route('login') }}">Latihan</a>
 								
 							</div>
 							<div class="clearfix"> </div>	
@@ -50,12 +50,11 @@
 							<div class="load_more">	
 								<ul id="myList">
 									<li>
-										<h4>Published on 15 June 2015</h4>
-										<p>Nullam fringilla sagittis tortor ut rhoncus. Nam vel ultricies erat, vel sodales leo. Maecenas pellentesque, est suscipit laoreet tincidunt, ipsum tortor vestibulum leo, ac dignissim diam velit id tellus. Morbi luctus velit quis semper egestas. Nam condimentum sem eget ex iaculis bibendum. Nam tortor felis, commodo faucibus sollicitudin ac, luctus a turpis. Donec congue pretium nisl, sed fringilla tellus tempus in.</p>
+										<h4>Dipublikasikan pada 15 June 2015</h4>
+										<p>{{$post->description}}</p>
 									</li>
 									<li>
-										<p>Nullam fringilla sagittis tortor ut rhoncus. Nam vel ultricies erat, vel sodales leo. Maecenas pellentesque, est suscipit laoreet tincidunt, ipsum tortor vestibulum leo, ac dignissim diam velit id tellus. Morbi luctus velit quis semper egestas. Nam condimentum sem eget ex iaculis bibendum. Nam tortor felis, commodo faucibus sollicitudin ac, luctus a turpis. Donec congue pretium nisl, sed fringilla tellus tempus in.</p>
-										<p>Nullam fringilla sagittis tortor ut rhoncus. Nam vel ultricies erat, vel sodales leo. Maecenas pellentesque, est suscipit laoreet tincidunt, ipsum tortor vestibulum leo, ac dignissim diam velit id tellus. Morbi luctus velit quis semper egestas. Nam condimentum sem eget ex iaculis bibendum. Nam tortor felis, commodo faucibus sollicitudin ac, luctus a turpis. Donec congue pretium nisl, sed fringilla tellus tempus in.</p>
+										
 										<div class="load-grids">
 											<div class="load-grid">
 												<p>Category</p>
@@ -69,6 +68,7 @@
 								</ul>
 							</div>
 					</div>
+					<br>
 					<div class="clearfix"> </div>
 <!-- view&like -->
 					<div class="song-grid-right">
@@ -83,7 +83,7 @@
 <!-- comment -->
 					<div class="all-comments">
 						<div class="all-comments-info">
-							<a href="#">Comments</a>
+							<a href="#">Komentar</a>
 							<div class="box">
 								<form>
 									<!-- <input type="text" placeholder="Name" required=" ">			           					   
@@ -96,9 +96,8 @@
 							</div>
 							<div class="all-comments-buttons">
 								<ul>
-									<li><a href="#" class="top">Top Comments</a></li>
-									<li><a href="#" class="top newest">Newest First</a></li>
-									<li><a href="#" class="top my-comment">My Comments</a></li>
+									<li><a href="#" class="top newest">Komentar Terbaru</a></li>
+									<li><a href="#" class="top my-comment">Komentar Saya</a></li>
 								</ul>
 							</div>
 						</div>

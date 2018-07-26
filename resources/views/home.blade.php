@@ -4,7 +4,7 @@
 <div class="main-grids">
                 <div class="top-grids">
                     <div class="recommended-info">
-                        <h3>Recent Videos</h3>
+                        <h3>Baru dilihat</h3>
                     </div>
                     <div class="col-md-4 resent-grid recommended-grid slider-top-grids">
                         <div class="resent-grid-img recommended-grid-img">
@@ -65,7 +65,7 @@
                 <div class="recommended">
                     <div class="recommended-grids">
                         <div class="recommended-info">
-                            <h3>Recomended</h3>
+                            <h3>Rekomendasi</h3>
                         </div>
                         <script src="js/responsiveslides.min.js"></script>
                          <script>
@@ -485,7 +485,7 @@
                 <div class="recommended">
                     <div class="recommended-grids">
                         <div class="recommended-info">
-                            <h3>Mathematics</h3>
+                            <h3>Matematika</h3>
                         </div>
                         <div class="col-md-3 resent-grid recommended-grid">
                             <div class="resent-grid-img recommended-grid-img">
@@ -640,7 +640,7 @@
                 <div class="recommended">
                     <div class="recommended-grids">
                         <div class="recommended-info">
-                            <h3>English</h3>
+                            <h3>Bahasa Inggris</h3>
                         </div>
                         <div class="col-md-3 resent-grid recommended-grid">
                             <div class="resent-grid-img recommended-grid-img">

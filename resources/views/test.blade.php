@@ -49,18 +49,18 @@
         <div id="navbar" class="navbar-collapse collapse">
 			<div class="top-search">
 				<form class="navbar-form navbar-right">
-					<input type="text" class="form-control" placeholder="Search...">
+					<input type="text" class="form-control" placeholder="Cari...">
 					<input type="submit" value=" ">
 				</form>
 			</div>
 			<div class="header-top-right">
 				<div class="file">
-					<a href="{{ url('/upload') }}">Upload</a>
+					<a href="{{ url('/upload') }}">Unggah</a>
 				</div>	
 				<div class="signin">
 					<a href="{{ route('logout') }}"
 					onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">Logout</a>
+                    document.getElementById('logout-form').submit();">Keluar</a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                      @csrf
@@ -90,14 +90,14 @@
 			<br>
 				<div class="drop-navigation drop-navigation">
 				  <ul class="nav nav-sidebar">
-					<li><a href="{{'posts'}}" class="home-icon"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Profile</a></li>
-					<li><a href="{{'favorite'}}" class="user-icon"><span class="glyphicon glyphicon-film" aria-hidden="true"></span>Favorite</a></li>
-					<li><a href="history.html" class="sub-icon"><span class="glyphicon glyphicon-home glyphicon-hourglass" aria-hidden="true"></span>History</a></li>
-					<li><a href="#" class="menu1"><span class="glyphicon glyphicon-home glyphicon-blackboard" aria-hidden="true"></span>lesson<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a></li>
+					<li><a href="{{'posts'}}" class="home-icon"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Profil</a></li>
+					<li><a href="{{'favorite'}}" class="user-icon"><span class="glyphicon glyphicon-film" aria-hidden="true"></span>Favorit</a></li>
+					<li><a href="history.html" class="sub-icon"><span class="glyphicon glyphicon-home glyphicon-hourglass" aria-hidden="true"></span>Riwayat</a></li>
+					<li><a href="#" class="menu1"><span class="glyphicon glyphicon-home glyphicon-blackboard" aria-hidden="true"></span>Pelajaran<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a></li>
 						<ul class="cl-effect-2">
-							<li><a href="movies.html">Mathemathics</a></li>                                             
-							<li><a href="movies.html">English</a></li>
-							<li><a href="movies.html">Biology</a></li> 
+							<li><a href="movies.html">Matematika</a></li>                                             
+							<li><a href="movies.html">Bahasa inggris</a></li>
+							<li><a href="movies.html">Biologi</a></li> 
 						</ul>
 						<!-- script-for-menu -->
 						<script>

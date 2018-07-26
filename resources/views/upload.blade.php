@@ -41,12 +41,12 @@
 			</div>  
 			<div class="header-top-right">
 				<div class="file">
-					<a href="{{ url('/upload') }}">Upload</a>
+					<a href="{{ url('/upload') }}">Unggah</a>
 				</div>	
 				<div class="signin">
 					<a href="{{ route('logout') }}"
 					onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">Logout</a>
+                    document.getElementById('logout-form').submit();">Keluar</a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                      @csrf
@@ -121,22 +121,21 @@
 		                            </ul>
 		                        </div>
 		                    @endif
-		                    <!-- <form action="{{url('/store')}}" method="post">
-								@csrf
-								<div class="form-group">
-									<label for="title">Title</label>
-									<input type="text" name="title" id="title" class="form-control">
-								</div>
-							</form> -->
 		                        <form action="/upload?{{$user->id}}" method="post" enctype="multipart/form-data">
 		                            @csrf
 		                            <div class="form-group">
-		                            	Title<input type="text" name="title">
-		                            	Description<input type="text" name="description">
-		                                <input type="file" class="form-control-file" name="fileToUpload" id="exampleInputFile" aria-describedby="fileHelp">
-		                                <small id="fileHelp" class="form-text text-muted">Please upload a valid video file. Size of video should not be more than 200MB.</small>
+		                            	Judul</label>
+										<input type="text" name="title" id="title" class="form-control">
 		                            </div>
-		                            <button type="submit" class="btn btn-primary">choose</button>
+		                            <div class="form-group">
+		                            	Deskripsi</label>
+										<textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+		                            </div>
+		                            <div class="form-group">
+		                                <input type="file" class="form-control-file" name="fileToUpload" id="exampleInputFile" aria-describedby="fileHelp">
+		                                <small id="fileHelp" class="form-text text-muted">Pilih video yang akan diunggah.</small>
+		                            </div>
+		                            <button type="submit" class="btn btn-primary">Publikasikan</button>
 		                        </form>
 		                </div>
 		            </div>

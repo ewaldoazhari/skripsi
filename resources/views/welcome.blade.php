@@ -43,11 +43,11 @@
                     <a href="{{ url('/upload') }}">Upload</a>
                 </div> -->  
                 <div class="signin">
-                    <a href="{{ route('register') }}">Sign Up</a>
+                    <a href="{{ route('register') }}">Daftar</a>
                     
                 </div>
                 <div class="signin">
-                    <a href="{{ route('login') }}">Sign In</a>
+                    <a href="{{ route('login') }}">Masuk</a>
                     
                 </div>
                 <div class="clearfix"> </div>
@@ -69,9 +69,9 @@
             <br>
                 <div class="drop-navigation drop-navigation">
                   <ul class="nav nav-sidebar">
-                    <li class="active"><a href="index.html" class="home-icon"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Profile</a></li>
-                    <li><a href="shows.html" class="user-icon"><span class="glyphicon glyphicon-film" aria-hidden="true"></span>Favorite video</a></li>
-                    <li><a href="history.html" class="sub-icon"><span class="glyphicon glyphicon-home glyphicon-hourglass" aria-hidden="true"></span>History</a></li>
+                    <li class="active"><a href="index.html" class="home-icon"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Profil</a></li>
+                    <li><a href="shows.html" class="user-icon"><span class="glyphicon glyphicon-film" aria-hidden="true"></span>Favorit</a></li>
+                    <li><a href="history.html" class="sub-icon"><span class="glyphicon glyphicon-home glyphicon-hourglass" aria-hidden="true"></span>Histori</a></li>
                     <li><a href="#" class="menu1"><span class="glyphicon glyphicon-home glyphicon-blackboard" aria-hidden="true"></span>Pelajaran<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a></li>
                         <ul class="cl-effect-2">
                             <li><a href="movies.html">Matematika</a></li>                                             
@@ -116,7 +116,7 @@
             <div class="main-grids">
                 <div class="top-grids">
                     <div class="recommended-info">
-                        <h3>Recent Videos</h3>
+                        <h3>Baru dilihat</h3>
                     </div>
                     <div class="col-md-4 resent-grid recommended-grid slider-top-grids">
                         <div class="resent-grid-img recommended-grid-img">
@@ -177,7 +177,7 @@
                 <div class="recommended">
                     <div class="recommended-grids">
                         <div class="recommended-info">
-                            <h3>Recomended</h3>
+                            <h3>Direkomendasikan</h3>
                         </div>
                         <script src="js/responsiveslides.min.js"></script>
                          <script>
@@ -597,7 +597,7 @@
                 <div class="recommended">
                     <div class="recommended-grids">
                         <div class="recommended-info">
-                            <h3>Mathematics</h3>
+                            <h3>Matematika</h3>
                         </div>
                         <div class="col-md-3 resent-grid recommended-grid">
                             <div class="resent-grid-img recommended-grid-img">
@@ -752,7 +752,7 @@
                 <div class="recommended">
                     <div class="recommended-grids">
                         <div class="recommended-info">
-                            <h3>English</h3>
+                            <h3>Bahasa Inggris</h3>
                         </div>
                         <div class="col-md-3 resent-grid recommended-grid">
                             <div class="resent-grid-img recommended-grid-img">

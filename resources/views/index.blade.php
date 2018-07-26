@@ -12,11 +12,11 @@
 				<a href="{{route('show', $post->id)}}">
 					{{$post->title}}
 				</a>
-				<a href="{{route('edit', $post->id)}}" class="btn btn-info">Edit</a>
-				<form onsubmit="return confirm('are you sure to delete this post?')" class="d-inline-block" method="post" action="{{route('posts.destroy' , $post->id)}}">
+				<a href="{{route('edit', $post->id)}}" class="btn btn-info">Ubah</a>
+				<form onsubmit="return confirm('apakah anda yakin untuk menghapus video ini ?')" class="d-inline-block" method="post" action="{{route('posts.destroy' , $post->id)}}">
 					@csrf
 					@method('delete')
-					<button type="submit" class="btn btn-danger">Delete</button>
+					<button type="submit" class="btn btn-danger">Hapus</button>
 				</form>
 			</h2>
 		</div>

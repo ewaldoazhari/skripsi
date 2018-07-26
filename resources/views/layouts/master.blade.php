@@ -37,18 +37,18 @@
         <div id="navbar" class="navbar-collapse collapse">
 			<div class="top-search">
 				<form class="navbar-form navbar-right">
-					<input type="text" class="form-control" placeholder="Search...">
+					<input type="text" class="form-control" placeholder="Cari...">
 					<input type="submit" value=" ">
 				</form>
 			</div>  
 			<div class="header-top-right">
 				<div class="file">
-					<a href="{{ url('/upload') }}">Upload</a>
+					<a href="{{ url('/upload') }}">Unggah</a>
 				</div>	
 				<div class="signin">
 					<a href="{{ route('logout') }}"
 					onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">Logout</a>
+                    document.getElementById('logout-form').submit();">Keluar</a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                      @csrf
