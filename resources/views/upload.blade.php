@@ -44,7 +44,29 @@
 							<input type="file" class="form-control-file" name="file" id="exampleInputFile" aria-describedby="fileHelp">
 							<small id="fileHelp" class="form-text text-muted">Pilih video yang akan diunggah.</small>
 						</div>
-						<button type="submit" class="btn btn-primary">Publikasikan</button>
+						<hr>
+						<div class="form-group">
+							Pertanyaan</label>
+							<textarea name="pertanyaan" id="pertanyaan" cols="30" rows="10" class="form-control"></textarea>
+						</div>
+						<div class="form-group">
+							Jawaban 1</label>
+							<input type="text" name="jawaban1" id="jawaban1" class="form-control">
+						</div>
+						<div class="form-group">
+							Jawaban 2</label>
+							<input type="text" name="jawaban2" id="jawaban2" class="form-control">
+						</div>
+						<div class="form-group">
+							Jawaban 3</label>
+							<input type="text" name="jawaban3" id="jawaban3" class="form-control">
+						</div>
+						<div class="form-group">
+							Jawaban Benar</label>
+							<input type="text" name="jawabanBenar" id="jawabanBenar" class="form-control">
+						</div>
+
+						<button type="submit" class="btn btn-primary">Unggah</button>
 					</form>
 				</div>
 			</div>
