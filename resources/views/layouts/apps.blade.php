@@ -59,7 +59,7 @@
 			<div class="container">
 				@yield('content')
 			</div>
-			
+
 		</div>
 		<div class="clearfix"> </div>
 	<div class="drop-menu">

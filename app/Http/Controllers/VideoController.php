@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
+use App\video;
 use App\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+
+class VideoController extends Controller
 {
 
     public function __construct()
     {
         $this->middleware('auth')->except(['index','show']);
     }
-
     /**
      * Display a listing of the resource.
      *
@@ -23,13 +22,8 @@ class PostController extends Controller
      */
     public function index()
     {
-//        $user = Auth::user();
-//        return view('index',['user' => $user]);
-
-        $posts = Post::orderBy('id','desc')->paginate(10);   
+        $posts = video::orderBy('id','desc')->paginate(10);
         return view('index',['posts' => $posts ]);
-
-//        $post->user_id = (int)$user_id;
     }
 
     /**
@@ -39,7 +33,7 @@ class PostController extends Controller
      */
     public function create()
     {
-       return view('create'); 
+        return view('create');
     }
 
     /**
@@ -50,15 +44,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        
-
         $this->validate($request, [
             'title' => 'required|min:3',
             'description' => 'required|min:10'
         ]);
 
 
-        Post::create([
+        video::create([
             'title' => $request->title,
             'description' => $request->description,
             'exercise' => $request->exercise,
@@ -66,50 +58,47 @@ class PostController extends Controller
 
         ]);
         return redirect(route('index'));
-
-
-
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Post  $post
+     * @param  \App\video  $video
      * @return \Illuminate\Http\Response
      */
     public function show(Request $request)
     {
         $id = substr(explode(':',serialize($request->query()))[3], 0, 2);
-        $post = Post::find($id);
-        $user = User::find($post->user_id);
+        $video = video::find($id);
+        $user = User::find($video->user_id);
 
-        return view('show', ['post' => $post, 'user' => $user]);
+        return view('show', ['video' => $video, 'user' => $user]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Post  $post
+     * @param  \App\video  $video
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(video $video)
     {
-        return view('edit',compact('post'));
+        return view('edit',compact('video'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Post  $post
+     * @param  \App\video  $video
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, video $video)
     {
-        $post->title = $request->title;
-        $post->description = $request->description;
-        $post->exercise = $request->exercise;
-        $post->save();
+        $video->title = $request->title;
+        $video->description = $request->description;
+        $video->exercise = $request->exercise;
+        $video->save();
         session()->flash('message','your post have been updated successfully');
         return redirect()->back();
     }
@@ -117,44 +106,49 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Post  $post
+     * @param  \App\video $video
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
-    public function destroy(Post $post)
+    public function destroy(video $video)
     {
-        $post->delete();
+        $video->delete();
         return redirect(route('index'));
     }
 
-       public function upload()
+    public function upload()
     {
         $user = Auth::user();
         return view('upload',['user' => $user]);
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function uploadPost(Request $request)
     {
         // $request->validate([
         //     'fileToUpload' => 'required|file|max:1024',
         // ]);
-        
+
         // $fileName = "file".time().'.'.request()->fileToUpload->getClientOriginalExtension();
- 
+
         // $request->fileToUpload->storeAs('video',$fileName);
 
         $title = $request->title;
         $fileName = $title.time().'.'.request()->fileToUpload->getClientOriginalExtension();
         $path = $request->fileToUpload->storeAs('video',$fileName);
         $user_id = substr(explode(':',serialize($request->query()))[3], 0, 2);
-        $post = new Post();
-        $post->user_id = (int)$user_id;
-        $post->title = $title;
-        $post->path = url($path);
-        $post->description = $request->description;
-        $post->save();
+        $video = new video();
+        $video->user_id = (int)$user_id;
+        $video->title = $title;
+        $video->path = url($path);
+        $video->description = $request->description;
+        $video->save();
 
-        
- 
-            return redirect(route('index'));
+
+
+        return redirect(route('index'));
     }
 }

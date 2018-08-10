@@ -1,4 +1,10 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/font-awesome.css": "/css/font-awesome.css"
+    "/css/app.css": "/css/app.css",
+    "/css/font-awesome.css": "/css/font-awesome.css",
+    "/js/jquery-1.11.1.min.js": "/js/jquery-1.11.1.min.js",
+    "/0.fe892c7f33b2b8d8a6d1.hot-update.js": "/0.fe892c7f33b2b8d8a6d1.hot-update.js",
+    "/0.de00dd677a1e343db8e4.hot-update.js": "/0.de00dd677a1e343db8e4.hot-update.js",
+    "/0.ed1560f1c4c140a73b27.hot-update.js": "/0.ed1560f1c4c140a73b27.hot-update.js",
+    "/0.7c85db207ce54aba8f63.hot-update.js": "/0.7c85db207ce54aba8f63.hot-update.js"
 }

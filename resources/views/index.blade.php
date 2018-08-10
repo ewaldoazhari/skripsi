@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-	<div class="card-header"><h1>{{ Auth::user()->name }}</h1></div>
+	{{--<div class="card-header"><h1>{{$user->name}}</h1></div>--}}
 	<br>
 	<br>
 	@foreach($posts as $post)

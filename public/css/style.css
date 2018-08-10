@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 /*test*/
 
 
-html, body{
+html, body {
 	background:#E7E0D3;
 	font-size:100%;
 	font-family: 'Open Sans', sans-serif;
@@ -402,7 +402,6 @@ position: absolute;
 ul.social-slide li i{
 	width:70px;
 	height:74px;
-	background:url(../images/img-resources.png)no-repeat;
 	display: inline-block;
 	margin:0px 15px;
 }
@@ -1474,7 +1473,6 @@ span.glyphicon.glyphicon-user {
 }
 /*-- developers --*/
 .developers-banner{
-  background: url(../images/dev-img.jpg) no-repeat 0px 0px;
   background-size: cover;
   padding: 14em 0 10em 0;
 }
@@ -1517,7 +1515,6 @@ span.glyphicon.glyphicon-user {
 }
 /*-- creators --*/
 .creators-banner{
-  background: url(../images/create.jpg) no-repeat 0px -105px !important;
   background-size: cover !important;
 }
 .creators-grids{
@@ -1604,7 +1601,6 @@ span.glyphicon.glyphicon-user {
 }
 /*-- try --*/
 .try-banner{
-    background: url(../images/try-banner.jpg) no-repeat 0px 1px !important;
     background-size: cover;
 }
 .try-left-info{
@@ -2495,7 +2491,6 @@ background: url(../images/social.png) no-repeat 0px 0px;
 		top: 74% !important;
 	}
 	.creators-banner {
-		background: url(../images/create.jpg) no-repeat -11px 1px !important;
 		background-size: cover !important;
 	}
 }
@@ -2687,7 +2682,7 @@ background: url(../images/social.png) no-repeat 0px 0px;
 		font-size: 12px;
 	}
 	.creators-banner {
-		background: url(../images/create.jpg) no-repeat -118px 0px !important;
+
 		background-size: cover !important;
 		padding: 3em 0;
 	}
@@ -2758,7 +2753,7 @@ background: url(../images/social.png) no-repeat 0px 0px;
 		font-size: 12px;
 	}
 	.try-banner {
-		background: url(../images/try-banner.jpg) no-repeat 0px 1px !important;
+
 		background-size: cover;
 	}
 	.footer-bottom ul li a.f-history {

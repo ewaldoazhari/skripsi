@@ -1,4 +1,4 @@
-let mix = require('laravel-mix');
+mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -18,3 +18,4 @@ mix.js('resources/assets/js/app.js', 'public/js')
 	.js('resources/assets/js/jquery-1.11.1.min.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css')
    .sass('resources/assets/sass/font-awesome.scss', 'public/css');
+
