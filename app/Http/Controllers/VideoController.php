@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use Carbon;
 use App\video;
 use App\User;
+use Lakshmaji\Thumbnail\Facade\Thumbnail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 
+
+/**
+ * @property  request
+ */
 class VideoController extends Controller
 {
 
@@ -128,26 +135,30 @@ class VideoController extends Controller
      */
     public function uploadPost(Request $request)
     {
-        // $request->validate([
-        //     'fileToUpload' => 'required|file|max:1024',
-        // ]);
 
-        // $fileName = "file".time().'.'.request()->fileToUpload->getClientOriginalExtension();
+        // file_put_contents($path.$videoName,$file);
+        // file_put_contents($path.$avatarname,$avatar);
+        // file_put_contents($path.$videoName,$request->fileToUpload);
+        // $path = $request->fileToUpload->storeAs('video',$fileName);
 
-        // $request->fileToUpload->storeAs('video',$fileName);
-
+        $file = $request->file('file');
+        $path = public_path('video/');
         $title = $request->title;
-        $fileName = $title.time().'.'.request()->fileToUpload->getClientOriginalExtension();
-        $path = $request->fileToUpload->storeAs('video',$fileName);
+        $videoName = $title.time().'.'.request()->file->getClientOriginalExtension();
+
+        if(!is_dir($path)){
+            file::makedirectory($path);
+        }
+
+        $file->move($path, $videoName);
+
         $user_id = substr(explode(':',serialize($request->query()))[3], 0, 2);
         $video = new video();
         $video->user_id = (int)$user_id;
         $video->title = $title;
-        $video->path = url($path);
+        $video->path = '/video/'.$videoName;
         $video->description = $request->description;
         $video->save();
-
-
 
         return redirect(route('index'));
     }

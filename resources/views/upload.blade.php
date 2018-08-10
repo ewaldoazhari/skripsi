@@ -41,7 +41,7 @@
 							<textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
 						</div>
 						<div class="form-group">
-							<input type="file" class="form-control-file" name="fileToUpload" id="exampleInputFile" aria-describedby="fileHelp">
+							<input type="file" class="form-control-file" name="file" id="exampleInputFile" aria-describedby="fileHelp">
 							<small id="fileHelp" class="form-text text-muted">Pilih video yang akan diunggah.</small>
 						</div>
 						<button type="submit" class="btn btn-primary">Publikasikan</button>
@@ -49,6 +49,5 @@
 				</div>
 			</div>
 		</div>
-
 
 	@endsection

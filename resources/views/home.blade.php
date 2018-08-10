@@ -1,6 +1,7 @@
 @extends('test')
 @section('content')
 
+
 <div class="main-grids">
                 <div class="top-grids">
                     <div class="recommended-info">
