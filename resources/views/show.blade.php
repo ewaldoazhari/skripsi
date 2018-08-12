@@ -7,7 +7,7 @@
 <!-- videoplaayer -->
 						<div class="video-grid">
 							<video class="video-js vjs-default-skin" width="707" height="407" controls data-setup='{}'>
-								<source src="{{ $video->path }}" type='video/mp4'>
+								<source src="{{ $video->path_video }}" type='video/mp4'>
 							</video>
 							<!-- <iframe src="https://www.youtube.com/embed/oYiT-vLjhC4" allowfullscreen></iframe> -->
 						</div>
@@ -15,16 +15,43 @@
 						<div class="song-info">
 							<h3>{{$video->title}}</h3>
 							<p class="author">Oleh <a href="#" class="author">{{$user->name}}</a></p>
-							<p class="views"> 2 menonton</p>
+							<p class="views"> 2 menyukai</p>
 							<div class="signin">
 			                    <a href="{{ route('register') }}">Menyukai</a>
 			                    
 			                </div>	
 							
-							<div class="signin">
-								<a href="{{ route('login') }}">Latihan</a>
-								
+							@if( $quiz !== null )
+
+							<div id="popup1" class="overlay">
+								<div class="popup">
+									<h2>Jawablah pertanyaan di bawah</h2>
+									<a class="close" href="#">&times;</a>
+									<div class="content">
+										{{ $quiz['pertanyaan'] }}
+									</div>
+										@foreach ($quiz['jawaban'] as $jawaban)
+										  <input type="radio" name="jawaban" value="{{ $jawaban }}"> {{ $jawaban }} <br>
+										@endforeach
+
+									<button 
+										type="submit" 
+										class="btn btn-primary" 
+										onclick="liatJawaban('{{ $quiz['jawaban_benar'] }}')" 
+										id="jawab_soal">Jawab
+									</button>
+
+									<h2 id="jawaban_benar" 
+										style="display:none">Selamat!! jawaban anda benar</h2>
+									<h2 id="jawaban_salah" 
+										style="display:none">Jawaban anda salah, Jawaban yang benar '{{ $quiz['jawaban_benar'] }}'</h2>
+								</div>
 							</div>
+
+							<div class="signin">
+								<a class="button" href="#popup1">Latihan soal</a>
+							</div>
+							@endif
 							<div class="clearfix"> </div>	
 						</div>
 					</div>
@@ -47,23 +74,13 @@
 									});
 								});
 							</script>
-							<div class="load_more">	
-								<ul id="myList">
+							<div class="media-body">
+								<ul id="video">
 									<li>
 										<h4>Dipublikasikan pada 15 June 2015</h4>
+                                        <hr>
+                                        <div class="clearfix"> </div>
 										<p>{{$video->description}}</p>
-									</li>
-									<li>
-										
-										<div class="load-grids">
-											<div class="load-grid">
-												<p>Category</p>
-											</div>
-											<div class="load-grid">
-												<a href="movies.html">Entertainment</a>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
 									</li>
 								</ul>
 							</div>
@@ -615,3 +632,34 @@
 				</div>
 			</div>
 @endsection
+
+<script type="text/javascript">
+	function liatJawaban(jawaban_benar){
+		var jawaban = document.getElementsByName("jawaban");
+		var pilihan = "";
+		// var test = $('#quiz');
+
+		if(jawaban[0].checked){
+			pilihan = jawaban[0].value
+		}else if(jawaban[1].checked){
+			pilihan = jawaban[1].value
+		}else if(jawaban[2].checked){
+			pilihan = jawaban[2].value
+		}else if(jawaban[3].checked){
+			pilihan = jawaban[3].value
+		}
+
+		if(pilihan === jawaban_benar){
+			document.getElementById("jawaban_salah").style.display = 'none';
+			document.getElementById("jawaban_benar").style.display = 'block';
+		}else{
+			document.getElementById("jawaban_benar").style.display = 'none';
+			document.getElementById("jawaban_salah").style.display = 'block';
+		}
+
+		setTimeout(function(){ 
+			document.getElementById("jawaban_benar").style.display = 'none';
+			document.getElementById("jawaban_salah").style.display = 'none';
+		}, 3000);
+	}
+</script>

@@ -15,12 +15,16 @@ class CreateQuizzesTable extends Migration
     {
         Schema::create('quizzes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('jawaban1');
-            $table->string('jawaban2');
-            $table->string('jawaban3');
-            $table->string('jawaban_benar');
+            $table->integer('video_id')->unsigned()->nullable();
+            $table->string('jawaban1')->nullable();
+            $table->string('jawaban2')->nullable();
+            $table->string('jawaban3')->nullable();
+            $table->string('jawaban_benar')->nullable();
             $table->text('pertanyaan')->nullable();
             $table->timestamps();
+            $table->foreign('video_id')
+                ->references('id')->on('videos')
+                ->onDelete('cascade');
         });
     }
 

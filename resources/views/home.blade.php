@@ -3,6 +3,7 @@
 
 
 <div class="main-grids">
+
                 <div class="top-grids">
                     <div class="recommended-info">
                         <h3>Baru dilihat</h3>
@@ -11,7 +12,7 @@
                         <div class="resent-grid-img recommended-grid-img">
                             <a href="{{'show'}}"><img src="images/bel1.jpg" alt="" /></a>
                             <div class="time">
-                                <p>3:04</p>
+
                             </div>
                             <div class="clck">
                                 <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
@@ -21,7 +22,7 @@
                             <h3><a href="single.html" class="title title-info">Belajar bahasa inggris (part 1)</a></h3>
                             <ul>
                                 <li><p class="author author-info"><a href="#" class="author">John</a></p></li>
-                                <li class="right-list"><p class="views views-info">2 views</p></li>
+                                <li class="right-list"><p class="views views-info">2 likes</p></li>
                             </ul>
                         </div>
                     </div>
@@ -63,6 +64,7 @@
                     </div>
                     <div class="clearfix"> </div>
                 </div>
+
                 <div class="recommended">
                     <div class="recommended-grids">
                         <div class="recommended-info">

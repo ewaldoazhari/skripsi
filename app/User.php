@@ -27,10 +27,19 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function files()
-    {
-        return $this->hasMany(File::class);
+//    public function files()
+//    {
+//        return $this->hasMany(File::class);
+//    }
+
+    public function likes(){
+        return $this->hasMany('App\Like');
     }
+
+    public function video(){
+        return $this->hasMany('App\video');
+    }
+
 }
 
 

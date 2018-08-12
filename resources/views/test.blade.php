@@ -29,7 +29,7 @@
 <link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 <!-- //fonts -->
 
-<!-- vide.js  -->
+<!-- video.js  -->
 <link href='http://vjs.zencdn.net/5.4.6/video-js.css' rel='stylesheet'/>
 
 </head>
@@ -67,10 +67,7 @@
                     </form>
 					
 				</div>
-				<!-- <div class="signin">
-					<a href="{{ route('login') }}">Sign In</a>
-					
-				</div> -->
+
 				<div class="clearfix"> </div>
 			</div>
         </div>
@@ -151,7 +148,11 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-
+	<script src="{{ asset('/js/like.js') }}"></script>
+	{{--<script type="text/javascript">--}}
+		{{--var token = '{{Session::token()}}';--}}
+		{{--var urlLike = '{{route('like')}}';--}}
+	{{--</script>--}}
     <!-- video.js -->
     <link href='http://vjs.zencdn.net/5.4.6/video-js.css' rel='stylesheet'/>
   </body>

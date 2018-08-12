@@ -29,7 +29,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-        <!-- logo -->  <a class="navbar-brand" href="{{ url('/main') }}"><h1><img src="images/pop.png" alt="" /></h1></a>
+        <!-- logo -->  <a class="navbar-brand" href="{{ url('home') }}"><h1><img src="images/pop.png" alt="" /></h1></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
 			<div class="top-search">

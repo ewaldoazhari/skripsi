@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 
 
@@ -35,6 +35,7 @@ Route::get('/index', 'VideoController@index')->name('index');
 Route::get('/profile', 'VideoController@show')->name('profile');
 Route::get('/edit', 'VideoController@edit')->name('edit');
 
+
 // Route::get('upload', 'PostController@upload');
 Route::post('upload', 'VideoController@uploadPost');
 // Route::post('upload', 'PostController@store');
@@ -45,5 +46,6 @@ Route::post('edit', 'VideoController@edit');
 Route::post('store', 'VideoController@store')->name('store');
 Route::post('show', 'VideoController@show');
 Route::post('update', 'VideoController@update');
+Route::post('answer', 'QuizController@answer');
 
 

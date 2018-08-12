@@ -63,7 +63,7 @@
 						</div>
 						<div class="form-group">
 							Jawaban Benar</label>
-							<input type="text" name="jawabanBenar" id="jawabanBenar" class="form-control">
+							<input type="text" name="jawaban_benar" id="jawabanBenar" class="form-control">
 						</div>
 
 						<button type="submit" class="btn btn-primary">Unggah</button>

@@ -8,16 +8,19 @@
 	@foreach($posts as $post)
 	<div class="card">
 		<div class="card-body">
+
 			<h2>
 				<a href="{{route('show', $post->id)}}">
 					{{$post->title}}
 				</a>
+				<br>
 				<a href="{{route('edit', $post->id)}}" class="btn btn-info">Ubah</a>
 				<form onsubmit="return confirm('apakah anda yakin untuk menghapus video ini ?')" class="d-inline-block" method="post" action="{{route('posts.destroy' , $post->id)}}">
 					@csrf
 					@method('delete')
 					<button type="submit" class="btn btn-danger">Hapus</button>
 				</form>
+				<hr>
 			</h2>
 		</div>
 	</div>

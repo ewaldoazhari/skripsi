@@ -39,9 +39,7 @@
                 </form>
             </div>
             <div class="header-top-right">
-                <!-- <div class="file">
-                    <a href="{{ url('/upload') }}">Upload</a>
-                </div> -->  
+
                 <div class="signin">
                     <a href="{{ route('register') }}">Daftar</a>
                     
@@ -69,10 +67,10 @@
             <br>
                 <div class="drop-navigation drop-navigation">
                   <ul class="nav nav-sidebar">
-                    <li class="active"><a href="index.html" class="home-icon"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Profil</a></li>
-                    <li><a href="shows.html" class="user-icon"><span class="glyphicon glyphicon-film" aria-hidden="true"></span>Favorit</a></li>
-                    <li><a href="history.html" class="sub-icon"><span class="glyphicon glyphicon-home glyphicon-hourglass" aria-hidden="true"></span>Histori</a></li>
-                    <li><a href="#" class="menu1"><span class="glyphicon glyphicon-home glyphicon-blackboard" aria-hidden="true"></span>Pelajaran<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a></li>
+                      <li><a href="{{'home'}}" class="home-icon"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Profil</a></li>
+                      <li><a href="{{'favorite'}}" class="user-icon"><span class="glyphicon glyphicon-film" aria-hidden="true"></span>Favorit</a></li>
+                      <li><a href="history.html" class="sub-icon"><span class="glyphicon glyphicon-home glyphicon-hourglass" aria-hidden="true"></span>Riwayat</a></li>
+                      <li><a href="#" class="menu1"><span class="glyphicon glyphicon-home glyphicon-blackboard" aria-hidden="true"></span>Pelajaran<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a></li>
                         <ul class="cl-effect-2">
                             <li><a href="movies.html">Matematika</a></li>                                             
                             <li><a href="movies.html">Fisika</a></li>
@@ -114,66 +112,6 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <div class="main-grids">
-                <div class="top-grids">
-                    <div class="recommended-info">
-                        <h3>Baru dilihat</h3>
-                    </div>
-                    <div class="col-md-4 resent-grid recommended-grid slider-top-grids">
-                        <div class="resent-grid-img recommended-grid-img">
-                            <a href="{{'show'}}"><img src="images/bel1.jpg" alt="" /></a>
-                            <div class="time">
-                                <p>3:04</p>
-                            </div>
-                            <div class="clck">
-                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                            </div>
-                        </div>
-                        <div class="resent-grid-info recommended-grid-info">
-                            <h3><a href="single.html" class="title title-info">Belajar bahasa inggris (part 1)</a></h3>
-                            <ul>
-                                <li><p class="author author-info"><a href="#" class="author">John</a></p></li>
-                                <li class="right-list"><p class="views views-info">2 views</p></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4 resent-grid recommended-grid slider-top-grids">
-                        <div class="resent-grid-img recommended-grid-img">
-                            <a href="single.html"><img src="images/bel2.jpg" alt="" /></a>
-                            <div class="time">
-                                <p>7:23</p>
-                            </div>
-                            <div class="clck">
-                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                            </div>
-                        </div>
-                        <div class="resent-grid-info recommended-grid-info">
-                            <h3><a href="single.html" class="title title-info">Belajar bahasa inggris (part 2)</a></h3>
-                            <ul>
-                                <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
-                                <li class="right-list"><p class="views views-info">4 views</p></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4 resent-grid recommended-grid slider-top-grids">
-                        <div class="resent-grid-img recommended-grid-img">
-                            <a href="single.html"><img src="images/bel3.jpg" alt="" /></a>
-                            <div class="time">
-                                <p>4:04</p>
-                            </div>
-                            <div class="clck">
-                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                            </div>
-                        </div>
-                        <div class="resent-grid-info recommended-grid-info">
-                            <h3><a href="single.html" class="title title-info">Belajar bahasa inggris (part 3)</a></h3>
-                            <ul>
-                                <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
-                                <li class="right-list"><p class="views views-info">7 views</p></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
                 <div class="recommended">
                     <div class="recommended-grids">
                         <div class="recommended-info">
