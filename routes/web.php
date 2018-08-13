@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/show4', 'HomeController@show4')->name('show4');
 
 Auth::routes();
 $this->get('/verify-user/{code}', 'Auth\RegisterController@activateUser')->name('activate.user');
@@ -28,6 +28,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/test', 'HomeController@test')->name('test');
 Route::get('/view', 'HomeController@view')->name('view');
 Route::get('/favorite', 'HomeController@favorite')->name('favorite');
+Route::get('/riwayat', 'HomeController@riwayat')->name('riwayat');
+
 Route::get('/show', 'VideoController@show')->name('show');
 Route::get('/upload', 'VideoController@upload')->name('upload');
 Route::get('/create', 'VideoController@create')->name('create');
@@ -42,6 +44,7 @@ Route::post('upload', 'VideoController@uploadPost');
 Route::resource('posts','VideoController');
 Route::post('post','VideoController@store')->name('store');
 Route::post('create', 'VideoController@store');
+Route::post('delete', 'VideoController@destroy');
 Route::post('edit', 'VideoController@edit');
 Route::post('store', 'VideoController@store')->name('store');
 Route::post('show', 'VideoController@show');

@@ -105,7 +105,7 @@
                         </div> -->
 
                         <div class="copyright">
-                            <p>Copyright © 2015 belame</p>
+                            <p>Copyright © 2018 belame</p>
                         </div>
                     </div>
                 </div>
@@ -146,7 +146,7 @@
                                             <div class="resent-grid-img recommended-grid-img">
                                                 <a href="single.html"><img src="images/bel4.jpg" alt="" /></a>
                                                 <div class="time small-time slider-time">
-                                                    <p>7:34</p>
+
                                                 </div>
                                                 <div class="clck small-clck">
                                                     <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
@@ -159,7 +159,7 @@
                                                         <p class="author author-info"><a href="#" class="author">John</a></p>
                                                     </div>
                                                     <div class="slid-bottom-grid slid-bottom-right">
-                                                        <p class="views views-info">2 views</p>
+                                                        <p class="views views-info">2 menyukai</p>
                                                     </div>
                                                     <div class="clearfix"> </div>
                                                 </div>
@@ -167,22 +167,22 @@
                                         </div>
                                         <div class="col-md-3 resent-grid recommended-grid slider-first">
                                             <div class="resent-grid-img recommended-grid-img">
-                                                <a href="single.html"><img src="images/bel5.jpg" alt="" /></a>
+                                                <a href="{{'show4'}}"><img src="images/contoh.jpg" alt="" /></a>
                                                 <div class="time small-time slider-time">
-                                                    <p>6:23</p>
+
                                                 </div>
                                                 <div class="clck small-clck">
                                                     <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                                                 </div>
                                             </div>
                                             <div class="resent-grid-info recommended-grid-info">
-                                                <h5><a href="single.html" class="title">Belajar bahasa inggris (part 5)</a></h5>
+                                                <h5><a href="{{'show4'}}" class="title">Belajar bahasa inggris</a></h5>
                                                 <div class="slid-bottom-grids">
                                                     <div class="slid-bottom-grid">
-                                                        <p class="author author-info"><a href="#" class="author">John</a></p>
+                                                        <p class="author author-info"><a href="#" class="author">Dini</a></p>
                                                     </div>
                                                     <div class="slid-bottom-grid slid-bottom-right">
-                                                        <p class="views views-info">1 views</p>
+                                                        <p class="views views-info">1 menyukai</p>
                                                     </div>
                                                     <div class="clearfix"> </div>
                                                 </div>
@@ -192,7 +192,7 @@
                                             <div class="resent-grid-img recommended-grid-img">
                                                 <a href="single.html"><img src="images/bel6.jpg" alt="" /></a>
                                                 <div class="time small-time slider-time">
-                                                    <p>2:45</p>
+
                                                 </div>
                                                 <div class="clck small-clck">
                                                     <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
@@ -205,7 +205,7 @@
                                                         <p class="author author-info"><a href="#" class="author">John</a></p>
                                                     </div>
                                                     <div class="slid-bottom-grid slid-bottom-right">
-                                                        <p class="views views-info">2 views</p>
+                                                        <p class="views views-info">2 menyukai</p>
                                                     </div>
                                                     <div class="clearfix"> </div>
                                                 </div>
@@ -215,7 +215,7 @@
                                             <div class="resent-grid-img recommended-grid-img">
                                                 <a href="single.html"><img src="images/bl1.jpg" alt="" /></a>
                                                 <div class="time small-time slider-time">
-                                                    <p>4:34</p>
+
                                                 </div>
                                                 <div class="clck small-clck">
                                                     <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
@@ -228,7 +228,7 @@
                                                         <p class="author author-info"><a href="#" class="author">Dini</a></p>
                                                     </div>
                                                     <div class="slid-bottom-grid slid-bottom-right">
-                                                        <p class="views views-info">2</p>
+                                                        <p class="views views-info">0 menyukai</p>
                                                     </div>
                                                     <div class="clearfix"> </div>
                                                 </div>

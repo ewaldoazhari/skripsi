@@ -89,7 +89,7 @@
 				  <ul class="nav nav-sidebar">
 					<li><a href="{{'index'}}" class="home-icon"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Profil</a></li>
 					<li><a href="{{'favorite'}}" class="user-icon"><span class="glyphicon glyphicon-film" aria-hidden="true"></span>Favorit</a></li>
-					<li><a href="history.html" class="sub-icon"><span class="glyphicon glyphicon-home glyphicon-hourglass" aria-hidden="true"></span>Riwayat</a></li>
+					<li><a href="{{'riwayat'}}" class="sub-icon"><span class="glyphicon glyphicon-home glyphicon-hourglass" aria-hidden="true"></span>Riwayat</a></li>
 					<li><a href="#" class="menu1"><span class="glyphicon glyphicon-home glyphicon-blackboard" aria-hidden="true"></span>Pelajaran<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a></li>
 						<ul class="cl-effect-2">
 							<li><a href="movies.html">Matematika</a></li>                                             

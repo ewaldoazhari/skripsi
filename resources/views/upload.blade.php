@@ -20,16 +20,13 @@
 
 					@endif
 
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
+						@if($errors->all())
+							<div class="alert alert-danger">
+								@foreach($errors->all() as $errors)
+									<li>{{$errors}}</li>
 								@endforeach
-							</ul>
-						</div>
-					@endif
+							</div>
+						@endif
 					<form action="/upload?{{$user->id}}" method="post" enctype="multipart/form-data">
 						@csrf
 						<div class="form-group">
@@ -45,6 +42,11 @@
 							<small id="fileHelp" class="form-text text-muted">Pilih video yang akan diunggah.</small>
 						</div>
 						<hr>
+						<small id="fileHelp" class="form-text text-muted">Silahkan mengisi form pertanyaan dan jawaban apabila kamu ingin menambahkan soal latihan pada video anda.</small>
+						<br>
+						<small id="fileHelp" class="form-text text-muted">Kamu juga dapat langsung menekan tombol UNGGAH apabila kamu tidak ingin menambahkan soal latihan.</small>
+						<br>
+						<br>
 						<div class="form-group">
 							Pertanyaan</label>
 							<textarea name="pertanyaan" id="pertanyaan" cols="30" rows="10" class="form-control"></textarea>

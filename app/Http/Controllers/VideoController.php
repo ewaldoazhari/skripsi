@@ -10,6 +10,7 @@ use Lakshmaji\Thumbnail\Facade\Thumbnail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Session;
 
 
 
@@ -133,8 +134,20 @@ class VideoController extends Controller
     {
         $video->title = $request->title;
         $video->description = $request->description;
-        $video->exercise = $request->exercise;
         $video->save();
+
+        if($request->pertanyaan !== null && $request->jawaban_benar !== null){
+
+            $quiz = new Quiz();
+            $quiz->video_id = (int)$video->id;
+            $quiz->jawaban1 = $request->jawaban1;
+            $quiz->jawaban2 = $request->jawaban2;
+            $quiz->jawaban3 = $request->jawaban3;
+            $quiz->jawaban_benar = $request->jawaban_benar;
+            $quiz->pertanyaan = $request->pertanyaan;
+            $quiz->save();
+        }
+
         session()->flash('message','your post have been updated successfully');
         return redirect()->back();
     }
@@ -169,6 +182,10 @@ class VideoController extends Controller
         // file_put_contents($path.$avatarname,$avatar);
         // file_put_contents($path.$videoName,$request->fileToUpload);
         // $path = $request->fileToUpload->storeAs('video',$fileName);
+        $this->validate($request, [
+            'title' => 'required|min:3',
+            'description' => 'required|min:10'
+        ]);
 
         $file = $request->file('file');
         $path = public_path('video/');
