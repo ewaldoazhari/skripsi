@@ -12,4 +12,8 @@ class video extends Model
     {
 		return $this->hasOne('App\Quiz');
 	}
+
+	public function like(){
+		return $this->hasMany('App\Like');
+	}
 }

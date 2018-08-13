@@ -41,7 +41,7 @@ Route::get('/edit', 'VideoController@edit')->name('edit');
 // Route::get('upload', 'PostController@upload');
 Route::post('upload', 'VideoController@uploadPost');
 // Route::post('upload', 'PostController@store');
-Route::resource('posts','VideoController');
+Route::resource('videos','VideoController');
 Route::post('post','VideoController@store')->name('store');
 Route::post('create', 'VideoController@store');
 Route::post('delete', 'VideoController@destroy');
@@ -50,5 +50,8 @@ Route::post('store', 'VideoController@store')->name('store');
 Route::post('show', 'VideoController@show');
 Route::post('update', 'VideoController@update');
 Route::post('answer', 'QuizController@answer');
+
+Route::post('like', 'VideoController@like')->name('like');
+Route::post('unlike', 'VideoController@unlike')->name('unlike');
 
 

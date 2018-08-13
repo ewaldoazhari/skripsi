@@ -19,7 +19,7 @@
                     <div class="resent-grid-info recommended-grid-info video-info-grid">
                         <h5><a href="single.html" class="title">Belajar matematika</a></h5>
                         <ul>
-                            <li><p class="author author-info"><a href="#" class="author">ewaldo</a></p></li>
+                            <li><p class="author author-info"><a href="#" class="author">Ewaldo</a></p></li>
                             <li class="right-list"><p class="views views-info">1 menyukai</p></li>
                         </ul>
                     </div>
@@ -37,7 +37,7 @@
                     <div class="resent-grid-info recommended-grid-info video-info-grid">
                         <h5><a href="single.html" class="title">Belajar Bahasa Inggris</a></h5>
                         <ul>
-                            <li><p class="author author-info"><a href="#" class="author">Dini</a></p></li>
+                            <li><p class="author author-info"><a href="#" class="author">Ewaldo</a></p></li>
                             <li class="right-list"><p class="views views-info">1 menyukai</p></li>
                         </ul>
                     </div>

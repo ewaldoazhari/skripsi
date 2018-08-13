@@ -15,11 +15,29 @@
 						<div class="song-info">
 							<h3>{{$video->title}}</h3>
 							<p class="author">Oleh <a href="#" class="author">{{$user->name}}</a></p>
-							<p class="views"> 2 menyukai</p>
-							<div class="signin">
-			                    <a href="{{ route('register') }}">Menyukai</a>
-			                    
-			                </div>	
+							<p class="views"> {{ $like }} menyukai</p>
+							
+							@if($hasLike)
+							<div class="signin" style="margin-top: 10px" >
+								<form action="/unlike?{{$user->id}}?{{$video->id}}" 
+									method="post" 
+									enctype="multipart/form-data">
+									@csrf
+										<button class="btn btn-primary" type="submit">dislike</button>
+									</form>
+							</div>
+			                @else
+			                 <div class="signin" style="margin-top: 10px" >
+			                    <form action="/like?{{$user->id}}?{{$video->id}}" 
+			                    	method="post" 
+			                    	enctype="multipart/form-data">
+			                    	@csrf
+			                    	<button class="btn btn-primary" type="submit">Menyukai</button>
+				                </form>
+				            </div>
+			                @endif
+			                
+				            
 							
 							@if( $quiz !== null )
 
@@ -35,6 +53,7 @@
 										@endforeach
 
 									<button 
+										style="margin-top: 1px;" 
 										type="submit" 
 										class="btn btn-primary" 
 										onclick="liatJawaban('{{ $quiz['jawaban_benar'] }}')" 

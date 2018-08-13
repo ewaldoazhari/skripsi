@@ -15,7 +15,7 @@
 				</a>
 				<br>
 				<a href="{{route('edit', $video->id)}}" class="btn btn-info">Ubah</a>
-				<form onsubmit="return confirm('apakah anda yakin untuk menghapus video ini ?')" class="d-inline-block" method="post" action="{{route('posts.destroy' , $video->id)}}">
+				<form onsubmit="return confirm('apakah anda yakin untuk menghapus video ini ?')" class="d-inline-block" method="post" action="{{route('videos.destroy' , $video->id)}}">
 					@csrf
 					@method('delete')
 					<button type="submit" class="btn btn-danger">Hapus</button>

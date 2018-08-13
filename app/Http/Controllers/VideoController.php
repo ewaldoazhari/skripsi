@@ -6,6 +6,7 @@ use Carbon;
 use App\video;
 use App\User;
 use App\Quiz;
+use App\Like;
 use Lakshmaji\Thumbnail\Facade\Thumbnail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -83,7 +84,16 @@ class VideoController extends Controller
     {
         
         $id = substr(explode(':',serialize($request->query()))[3], 0, 2);
-        $videos = Video::with('quiz')->where('id',$id)->get();
+        $videos = Video::with('quiz','like')->where('id',$id)->get();
+        $like = count($videos[0]->like);
+        $hasLike = false;
+
+        foreach($videos[0]->like as $likes){
+            if(Auth::user()->id == $likes->user_id ){
+                $hasLike = true;
+            }
+        }
+
 
         if($videos[0]->quiz !== null){
             $quiz['id'] = $videos[0]->quiz->id;
@@ -109,7 +119,12 @@ class VideoController extends Controller
         
         $user = User::find($video->user_id);
                 
-        return view('show', ['video' => $video, 'user' => $user, 'quiz' => $quiz]);
+        return view('show', [   'video' => $video, 
+                                'user' => $user, 
+                                'quiz' => $quiz, 
+                                'like' => $like, 
+                                'hasLike' => $hasLike
+                            ]);
     }
 
     /**
@@ -118,9 +133,19 @@ class VideoController extends Controller
      * @param  \App\video  $video
      * @return \Illuminate\Http\Response
      */
-    public function edit(video $video)
+    public function edit(Request $request, video $video)
     {
-        return view('edit',compact('video'));
+
+        $video_id = (int) substr(explode(':',serialize($request->query()))[3], 0, 1);
+        $videos = Video::with('quiz')->where('id',$video_id)->get();
+        $video = $videos[0];
+        $quiz = $videos[0]->quiz;
+
+        // dd(
+            // $quiz
+        // );
+
+        return view('edit',compact('video','quiz'));
     }
 
     /**
@@ -132,6 +157,13 @@ class VideoController extends Controller
      */
     public function update(Request $request, video $video)
     {
+
+        $video_id = (int) substr(explode(':',serialize($request->query()))[3], 0, 1);
+        $videos = Video::with('quiz')->where('id',$video_id)->get();
+
+        $video = $videos[0];
+        $quiz = $videos[0]->quiz; 
+
         $video->title = $request->title;
         $video->description = $request->description;
         $video->save();
@@ -139,7 +171,7 @@ class VideoController extends Controller
         if($request->pertanyaan !== null && $request->jawaban_benar !== null){
 
             $quiz = new Quiz();
-            $quiz->video_id = (int)$video->id;
+            $quiz->video_id = $video->id;
             $quiz->jawaban1 = $request->jawaban1;
             $quiz->jawaban2 = $request->jawaban2;
             $quiz->jawaban3 = $request->jawaban3;
@@ -169,6 +201,36 @@ class VideoController extends Controller
     {
         $user = Auth::user();
         return view('upload',['user' => $user]);
+    }
+
+    public function unlike(Request $request)
+    {
+        $video_id = explode(':',serialize($request->query()));
+        $video_id = explode('?',$video_id[4]);
+
+        $user_id = Auth::user()->id;
+        $video_id = (int) substr($video_id[1], 0, 1);
+
+        $like = Like::where('user_id',$user_id)->where('video_id', $video_id)->get();
+        $like[0]->delete(); 
+       return redirect()->back();
+    }
+
+    public function like(Request $request)
+    {
+        $video_id = explode(':',serialize($request->query()));
+        $video_id = explode('?',$video_id[4]);
+
+        $user_id = Auth::user()->id;
+        $video_id = (int) substr($video_id[1], 0, 1);
+
+       $like =  new Like();
+       $like->user_id = $user_id;
+       $like->video_id = $video_id;
+       $like->like = 1;
+       $like->save();
+
+       return redirect()->back();
     }
 
     /**
